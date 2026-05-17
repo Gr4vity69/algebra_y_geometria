@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGA — Parcial Teórico</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="tag">UTN · Álgebra y Geometría Analítica</p>
+      <h1>Apunte interactivo para aprobar el parcial teórico</h1>
+      <p class="lead">Unidades 1 a 4: vectores, matrices, determinantes y sistemas. Hecho para entender, repasar y practicar antes del examen.</p>
+      <div class="actions">
+        <a href="#modo-repaso" class="btn primary">Modo repaso</a>
+        <a href="#checklist" class="btn secondary">Checklist final</a>
+      </div>
+    </div>
+    <div class="card formula-card">
+      <h2>Relación clave</h2>
+      <p>Si <strong>det(A) ≠ 0</strong>:</p>
+      <ul>
+        <li>A es invertible</li>
+        <li>rango máximo</li>
+        <li>columnas LI</li>
+        <li>sistema con solución única</li>
+      </ul>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <a href="#vectores">Vectores</a>
+    <a href="#matrices">Matrices</a>
+    <a href="#determinantes">Determinantes</a>
+    <a href="#sistemas">Sistemas</a>
+    <a href="#preguntas">Preguntas</a>
+  </nav>
+
+  <main>
+    <section id="vectores" class="section">
+      <h2>1. Vectores</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Qué es un vector</h3>
+          <p>Un vector representa una magnitud con <strong>módulo, dirección y sentido</strong>. En R² se escribe como <code>v = (x, y)</code>; en R³ como <code>v = (x, y, z)</code>.</p>
+          <div class="mini-drawing vector"><span>v = (3,2)</span></div>
+        </article>
+        <article class="card">
+          <h3>Módulo</h3>
+          <p>Es la longitud del vector. En R²:</p>
+          <p class="math">|v| = √(x² + y²)</p>
+          <p>Ejemplo: si <code>v=(3,4)</code>, entonces <code>|v|=5</code>.</p>
+        </article>
+        <article class="card">
+          <h3>Paralelismo</h3>
+          <p>Dos vectores son paralelos si sus componentes son proporcionales. Ejemplo:</p>
+          <p class="math">(2,4) = 2(1,2)</p>
+          <p>Entonces son dependientes lineales.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>2. Combinación lineal, LI y LD</h2>
+      <div class="grid two">
+        <article class="card important">
+          <h3>Combinación lineal</h3>
+          <p>Un vector es combinación lineal de otros si puede construirse usando esos vectores multiplicados por escalares.</p>
+          <p class="math">v = λ₁v₁ + λ₂v₂ + ... + λₙvₙ</p>
+          <p><strong>Idea humana:</strong> ¿puedo fabricar este vector usando los otros?</p>
+        </article>
+        <article class="card important">
+          <h3>Independencia lineal</h3>
+          <p>Un conjunto es LI si la única forma de obtener el vector nulo es usando todos los escalares iguales a cero.</p>
+          <p><strong>Traducción:</strong> ningún vector sobra.</p>
+        </article>
+      </div>
+      <details class="accordion">
+        <summary>Interpretación geométrica</summary>
+        <p>En R², dos vectores LI no son paralelos y pueden generar todo el plano. Dos vectores LD son paralelos. En R³, tres vectores LD pueden estar en un mismo plano.</p>
+      </details>
+    </section>
+
+    <section id="matrices" class="section">
+      <h2>3. Matrices</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Definición</h3>
+          <p>Una matriz es un arreglo rectangular de números. Su orden es <strong>filas × columnas</strong>.</p>
+        </article>
+        <article class="card danger">
+          <h3>Producto</h3>
+          <p>El producto matricial generalmente <strong>NO es conmutativo</strong>.</p>
+          <p class="math">AB ≠ BA</p>
+        </article>
+        <article class="card">
+          <h3>Inversa</h3>
+          <p>Una matriz cuadrada A tiene inversa si existe A⁻¹ tal que:</p>
+          <p class="math">AA⁻¹ = A⁻¹A = I</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>4. Rango</h2>
+      <article class="card wide">
+        <p>El rango mide cuánta información independiente tiene una matriz. Se puede pensar como la cantidad de filas o columnas linealmente independientes.</p>
+        <ul>
+          <li>Rango máximo en una matriz n×n: n.</li>
+          <li>Si rango menor al máximo, hay dependencia lineal.</li>
+          <li>En sistemas, el rango sirve para saber si hay solución única, infinitas o ninguna.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="determinantes" class="section">
+      <h2>5. Determinantes</h2>
+      <div class="grid two">
+        <article class="card">
+          <h3>Qué son</h3>
+          <p>Un determinante es un número asociado a una matriz cuadrada. Sirve para estudiar invertibilidad, rango, independencia lineal y sistemas.</p>
+        </article>
+        <article class="card">
+          <h3>2×2</h3>
+          <p class="math">|a b; c d| = ad - bc</p>
+        </article>
+      </div>
+      <div class="card wide">
+        <h3>Propiedades que salvan parciales</h3>
+        <ul>
+          <li>Dos filas iguales → det = 0.</li>
+          <li>Una fila múltiplo de otra → det = 0.</li>
+          <li>Intercambiar filas cambia el signo.</li>
+          <li>Matriz triangular → producto de la diagonal.</li>
+          <li>det(A) ≠ 0 → A tiene inversa.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="sistemas" class="section">
+      <h2>6. Sistemas de ecuaciones lineales</h2>
+      <div class="grid">
+        <article class="card success">
+          <h3>Compatible determinado</h3>
+          <p>Tiene una única solución. Geométricamente: rectas que se cortan en un punto.</p>
+        </article>
+        <article class="card warning">
+          <h3>Compatible indeterminado</h3>
+          <p>Tiene infinitas soluciones. Geométricamente: rectas coincidentes o planos que se superponen.</p>
+        </article>
+        <article class="card danger">
+          <h3>Incompatible</h3>
+          <p>No tiene solución. Geométricamente: rectas paralelas o planos sin intersección común.</p>
+        </article>
+      </div>
+      <article class="card wide important">
+        <h3>Rouché-Frobenius</h3>
+        <ul>
+          <li>Si rango(A) ≠ rango(A*) → incompatible.</li>
+          <li>Si rango(A) = rango(A*) = n → compatible determinado.</li>
+          <li>Si rango(A) = rango(A*) &lt; n → compatible indeterminado.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="modo-repaso" class="section">
+      <h2>Modo repaso rápido</h2>
+      <div id="flashcard" class="flashcard">
+        <p id="question">Presioná empezar para practicar.</p>
+        <button id="showAnswer" class="btn secondary">Mostrar respuesta</button>
+        <p id="answer" class="hidden"></p>
+        <button id="nextCard" class="btn primary">Empezar / siguiente</button>
+      </div>
+    </section>
+
+    <section id="preguntas" class="section">
+      <h2>Preguntas típicas de teoría</h2>
+      <details class="accordion"><summary>¿Qué significa det(A)=0?</summary><p>A es singular, no tiene inversa, su rango es menor que el orden, sus columnas o filas son LD y el sistema asociado no tiene solución única.</p></details>
+      <details class="accordion"><summary>¿Qué representa el rango?</summary><p>La cantidad de filas o columnas independientes. En sistemas ayuda a clasificar soluciones.</p></details>
+      <details class="accordion"><summary>¿Cuál es la diferencia entre LI y LD?</summary><p>LI: ningún vector sobra. LD: algún vector puede obtenerse como combinación lineal de otros.</p></details>
+      <details class="accordion"><summary>¿Cuándo se puede usar Cramer?</summary><p>Cuando el sistema es cuadrado y det(A) ≠ 0.</p></details>
+    </section>
+
+    <section id="checklist" class="section checklist">
+      <h2>Checklist final antes del parcial</h2>
+      <label><input type="checkbox"> Puedo explicar combinación lineal.</label>
+      <label><input type="checkbox"> Puedo diferenciar LI y LD.</label>
+      <label><input type="checkbox"> Sé qué implica det(A)=0.</label>
+      <label><input type="checkbox"> Entiendo rango y Rouché-Frobenius.</label>
+      <label><input type="checkbox"> Sé clasificar sistemas.</label>
+      <label><input type="checkbox"> Recuerdo que AB ≠ BA.</label>
+    </section>
+  </main>
+
+  <footer>
+    <p>Hecho para estudiar sin convertirse en estatua algebraica. Fuerza: mañana se aprueba.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
