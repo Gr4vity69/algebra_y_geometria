@@ -1,0 +1,151 @@
+:root{
+  --bg:#0f172a;
+  --panel:#111c35;
+  --card:#172554;
+  --text:#e5e7eb;
+  --muted:#a5b4fc;
+  --accent:#38bdf8;
+  --accent2:#a78bfa;
+  --danger:#fb7185;
+  --success:#34d399;
+  --warning:#fbbf24;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:radial-gradient(circle at top,#1e3a8a 0,#0f172a 40%,#020617 100%);
+  color:var(--text);
+  line-height:1.6;
+}
+.hero{
+  min-height:78vh;
+  display:grid;
+  grid-template-columns:1.4fr .8fr;
+  gap:2rem;
+  align-items:center;
+  padding:4rem clamp(1rem,5vw,6rem);
+}
+.tag{
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-weight:700;
+  font-size:.85rem;
+}
+h1{
+  font-size:clamp(2.2rem,6vw,5rem);
+  line-height:.95;
+  margin:.3rem 0 1rem;
+}
+.lead{font-size:1.2rem;max-width:760px;color:#cbd5e1}
+.actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}
+.btn{
+  border:0;
+  padding:.85rem 1.1rem;
+  border-radius:999px;
+  font-weight:800;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
+}
+.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#020617}
+.secondary{background:#263653;color:var(--text);border:1px solid #475569}
+.nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  backdrop-filter:blur(14px);
+  background:rgba(2,6,23,.78);
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  display:flex;
+  gap:.5rem;
+  overflow:auto;
+  padding:.75rem 1rem;
+}
+.nav a{
+  color:#dbeafe;
+  text-decoration:none;
+  padding:.55rem .8rem;
+  border-radius:999px;
+  white-space:nowrap;
+}
+.nav a:hover{background:#1e293b}
+main{padding:2rem clamp(1rem,5vw,6rem)}
+.section{margin:0 auto 4rem;max-width:1150px}
+h2{font-size:clamp(1.8rem,4vw,3rem);margin-bottom:1rem}
+h3{margin-top:0;color:#bfdbfe}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card,.accordion,.flashcard{
+  background:linear-gradient(180deg,rgba(23,37,84,.92),rgba(15,23,42,.92));
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow:0 18px 55px rgba(0,0,0,.28);
+  border-radius:24px;
+  padding:1.25rem;
+}
+.formula-card{transform:rotate(1.5deg)}
+.wide{margin-top:1rem}
+.important{border-color:rgba(56,189,248,.45)}
+.danger{border-color:rgba(251,113,133,.5)}
+.success{border-color:rgba(52,211,153,.45)}
+.warning{border-color:rgba(251,191,36,.45)}
+.math{
+  font-family:"Courier New",monospace;
+  background:#020617;
+  color:#93c5fd;
+  padding:.7rem;
+  border-radius:12px;
+  overflow:auto;
+}
+code{background:#020617;color:#93c5fd;padding:.15rem .35rem;border-radius:6px}
+.mini-drawing{
+  height:160px;
+  margin-top:1rem;
+  border-radius:18px;
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px),
+    linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px);
+  background-size:28px 28px;
+  position:relative;
+  overflow:hidden;
+}
+.mini-drawing.vector:before{
+  content:"";
+  position:absolute;
+  left:32px;
+  bottom:35px;
+  width:110px;
+  height:5px;
+  background:var(--accent);
+  transform:rotate(-33deg);
+  transform-origin:left center;
+  border-radius:99px;
+}
+.mini-drawing.vector:after{
+  content:"";
+  position:absolute;
+  left:132px;
+  bottom:92px;
+  border-left:16px solid var(--accent);
+  border-top:10px solid transparent;
+  border-bottom:10px solid transparent;
+  transform:rotate(-33deg);
+}
+.mini-drawing span{position:absolute;right:15px;bottom:12px;color:#bfdbfe;font-weight:800}
+.accordion{margin-top:1rem}
+.accordion summary{cursor:pointer;font-weight:800;color:#bfdbfe}
+.flashcard{text-align:center;max-width:680px;margin:auto}
+.flashcard #question{font-size:1.35rem;font-weight:800}
+.hidden{display:none}
+.checklist{display:grid;gap:.8rem}
+.checklist label{background:#111827;padding:1rem;border-radius:16px;border:1px solid #374151}
+.checklist input{transform:scale(1.3);margin-right:.7rem}
+footer{text-align:center;padding:3rem 1rem;color:#cbd5e1;border-top:1px solid rgba(255,255,255,.08)}
+@media(max-width:850px){
+  .hero{grid-template-columns:1fr;min-height:auto;padding-top:3rem}
+  .grid,.grid.two{grid-template-columns:1fr}
+  .formula-card{transform:none}
+}
